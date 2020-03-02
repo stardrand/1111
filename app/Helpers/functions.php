@@ -60,6 +60,23 @@ function showMsg($status,$message = '',$data = array()){
     }
 
 
+    function typeconff($data,$p_id=0,$level=0){
+    if(!$data){
+        return ;
+    }
+    static $atr=[];
+    foreach($data as $k=>$v){
+        if($v->p_id==$p_id){
+            $v->level=$level;
+            $atr[]=$v;
+
+            typeconff($data,$v->cate_id,$level+1);
+        }
+    }
+    return $atr;
+}
+
+
     //多个文件上传
     function Moreuploads($filename){
         $photo = request()->file($filename);

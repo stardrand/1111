@@ -146,7 +146,7 @@ class GoodsController extends Controller
         $ret=Goods::find($id);
         
         $ret['g_imgs']=explode('|',$ret['g_imgs']);
-        
+        // dd($ret);
         return view('goods.edit',['res'=>$res,'date'=>$date,'ret'=>$ret]);
     }
 
