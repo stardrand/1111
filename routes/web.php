@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::middleware('cehcklogin');
+
+
+Route::prefix('goods')->group(function(){
+Route::get('/create','GoodsController@create');	//添加
+Route::post('/store','GoodsController@store');	//执行添加
+Route::get('/','GoodsController@index');  //展示
+Route::get('edit/{id}','GoodsController@edit'); //编辑
+Route::post('update/{id}','GoodsController@update');    //执行编辑
+Route::get('destroy/{id}','GoodsController@destroy'); //删除
 });
+
