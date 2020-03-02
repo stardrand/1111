@@ -41,4 +41,13 @@ Route::prefix('cate')->group(function(){
 
 });
 
+Route::prefix('brand')->group(function(){
+Route::get('create','BrandController@create');
+Route::post('store','BrandController@store');
+Route::get('list','BrandController@list');
+Route::get('destroy/{bid}','BrandController@destroy');
+Route::get('edit/{bid}','BrandController@edit');
+Route::post('update/{bid}','BrandController@update');
+});
+
 

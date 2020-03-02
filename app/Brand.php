@@ -11,4 +11,5 @@ class Brand extends Model
     public $timestamps=false; //时间
     //黑名单
     protected $guarded =[];
+
 }

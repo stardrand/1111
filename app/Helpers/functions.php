@@ -1,8 +1,21 @@
 <?php
 
-use AlibabaCloud\Client\AlibabaCloud;
-use AlibabaCloud\Client\Exception\ClientException;
-use AlibabaCloud\Client\Exception\ServerException;
+//     function upload($filename){
+//         if(request()->file($filename)->isValid()){
+//             $file = request()->file($filename);
+//             $info = $file->store($filename);
+//             return $info;
+//         }
+//         exit("未获取文件");
+//     }
+
+
+
+
+
+// use AlibabaCloud\Client\AlibabaCloud;
+// use AlibabaCloud\Client\Exception\ClientException;
+// use AlibabaCloud\Client\Exception\ServerException;
 
   function cateinfo($info,$p_id=0,$level=1){
     static $res=[];
@@ -62,4 +75,5 @@ function showMsg($status,$message = '',$data = array()){
           
         return $store_result;
      }
+
 

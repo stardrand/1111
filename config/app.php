@@ -228,5 +228,4 @@ return [
 
     ],
     'pageSize'=>3
-
 ];
