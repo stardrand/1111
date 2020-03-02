@@ -16,7 +16,7 @@
       <tr>
         <button type="button"><a href="{{url('goods')}}">商品</a></button>
         <button type="button"><a href="{{url('cate')}}">分类</a></button>
-        <button type="button"><a href="{{url('brand')}}">品牌</a></button>
+        <button type="button"><a href="{{url('brand/list')}}">品牌</a></button>
         <button type="button"><a href="{{url('user')}}">管理员</a></button>
       </tr>
     </tbody>
