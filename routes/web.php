@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/brand/create','BrandController@create');
+Route::post('/brand/store','BrandController@store');
+Route::get('/brand/list','BrandController@list');
+Route::get('/brand/destroy/{bid}','BrandController@destroy');
+Route::get('/brand/edit/{bid}','BrandController@edit');
+Route::post('/brand/update/{bid}','BrandController@update');
