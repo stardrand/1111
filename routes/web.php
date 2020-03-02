@@ -11,11 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-=======
 //分类
 Route::prefix('cate')->group(function(){
     Route::get('create','CateController@create');
@@ -26,4 +21,5 @@ Route::prefix('cate')->group(function(){
     Route::post('update/{id}','CateController@update');
     Route::post('ajaxtest','CateController@ajaxtest');
 });
->>>>>>> cate
+
+
