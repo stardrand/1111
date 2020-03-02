@@ -1,4 +1,22 @@
 <?php
+
+use AlibabaCloud\Client\AlibabaCloud;
+use AlibabaCloud\Client\Exception\ClientException;
+use AlibabaCloud\Client\Exception\ServerException;
+
+  function cateinfo($info,$p_id=0,$level=1){
+    static $res=[];
+    foreach($info as $k=>$v) {
+        if ($v['p_id']==$p_id){
+            $v['level']=$level;
+            $res[] = $v;
+            cateinfo($info, $v['cate_id'],$v['level'] + 1);
+        }
+    }
+    return $res;
+}
+  
+
 /**
  * 公用的方法  返回json数据，进行信息的提示
  * @param $status 状态
@@ -13,25 +31,6 @@ function showMsg($status,$message = '',$data = array()){
     );
     exit(json_encode($result));
 }
-
-
-//无限极
-function typeconff($data,$p_id=0,$level=0){
-    if(!$data){
-        return ;
-    }
-    static $atr=[];
-    foreach($data as $k=>$v){
-        if($v->p_id==$p_id){
-            $v->level=$level;
-            $atr[]=$v;
-
-            typeconff($data,$v->cate_id,$level+1);
-        }
-    }
-    return $atr;
-}
-
 
  	/**
      * 上传文件
@@ -63,3 +62,4 @@ function typeconff($data,$p_id=0,$level=0){
           
         return $store_result;
      }
+
