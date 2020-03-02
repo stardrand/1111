@@ -16,7 +16,9 @@
 // });
 // Route::middleware('cehcklogin');
 
+Route::view('/','index');	//首页
 
+//商品
 Route::prefix('goods')->group(function(){
 Route::get('/create','GoodsController@create');	//添加
 Route::post('/store','GoodsController@store');	//执行添加
