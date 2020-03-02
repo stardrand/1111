@@ -11,13 +11,43 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::middleware('cehcklogin');
+
+Route::view('/','index');	//首页
+
+//商品
+Route::prefix('goods')->group(function(){
+Route::get('/create','GoodsController@create');	//添加
+Route::post('/store','GoodsController@store');	//执行添加
+Route::get('/','GoodsController@index');  //展示
+Route::get('edit/{id}','GoodsController@edit'); //编辑
+Route::post('update/{id}','GoodsController@update');    //执行编辑
+Route::get('destroy/{id}','GoodsController@destroy'); //删除
 });
 
-Route::get('/brand/create','BrandController@create');
-Route::post('/brand/store','BrandController@store');
-Route::get('/brand/list','BrandController@list');
-Route::get('/brand/destroy/{bid}','BrandController@destroy');
-Route::get('/brand/edit/{bid}','BrandController@edit');
-Route::post('/brand/update/{bid}','BrandController@update');
+//分类
+Route::prefix('cate')->group(function(){
+    Route::get('create','CateController@create');
+    Route::post('store','CateController@store');
+    Route::get('/','CateController@index');
+    Route::get('destroy/{id}','CateController@destroy');
+    Route::get('edit/{id}','CateController@edit');
+    Route::post('update/{id}','CateController@update');
+    Route::post('ajaxtest','CateController@ajaxtest');
+
+});
+
+Route::prefix('brand')->group(function(){
+Route::get('create','BrandController@create');
+Route::post('store','BrandController@store');
+Route::get('list','BrandController@list');
+Route::get('destroy/{bid}','BrandController@destroy');
+Route::get('edit/{bid}','BrandController@edit');
+Route::post('update/{bid}','BrandController@update');
+});
+
+
