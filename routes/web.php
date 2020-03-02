@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    $name="欢迎光临";
-    return view('welcome',['name'=>$name]);
+//分类
+Route::prefix('cate')->group(function(){
+    Route::get('create','CateController@create');
+    Route::post('store','CateController@store');
+    Route::get('/','CateController@index');
+    Route::get('destroy/{id}','CateController@destroy');
+    Route::get('edit/{id}','CateController@edit');
+    Route::post('update/{id}','CateController@update');
+    Route::post('ajaxtest','CateController@ajaxtest');
 });
