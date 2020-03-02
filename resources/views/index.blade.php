@@ -9,26 +9,15 @@
 </head>
 <body>
 <center>
+  <h1>首页</h1>
 <div class="table-responsive">
-  <form>
-  <input type="text" name="g_name" value="{{$g_name}}"   placeholder="请输入商品名称">
-  <input type="submit" value="搜索">
-  </form>
   <table class="table">
-    <thead>
-      <tr>
-        <th>商品</th>
-        <th>分类</th>
-        <th>品牌</th>
-        <th>管理员</th>
-      </tr>
-    </thead>
     <tbody>
       <tr>
-        <td><a href="{{url('goods')}}"></a></td>
-        <td><a href="{{url('cate')}}"></a></td>
-        <td><a href="{{url('brand')}}"></a></td>
-        <td><a href="{{url('user')}}"></a></td>
+        <button type="button"><a href="{{url('goods')}}">商品</a></button>
+        <button type="button"><a href="{{url('cate')}}">分类</a></button>
+        <button type="button"><a href="{{url('brand')}}">品牌</a></button>
+        <button type="button"><a href="{{url('user')}}">管理员</a></button>
       </tr>
     </tbody>
   </table>

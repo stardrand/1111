@@ -11,7 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -27,8 +27,8 @@ Route::get('/','GoodsController@index');  //展示
 Route::get('edit/{id}','GoodsController@edit'); //编辑
 Route::post('update/{id}','GoodsController@update');    //执行编辑
 Route::get('destroy/{id}','GoodsController@destroy'); //删除
-})
-=======
+});
+
 //分类
 Route::prefix('cate')->group(function(){
     Route::get('create','CateController@create');
@@ -38,7 +38,7 @@ Route::prefix('cate')->group(function(){
     Route::get('edit/{id}','CateController@edit');
     Route::post('update/{id}','CateController@update');
     Route::post('ajaxtest','CateController@ajaxtest');
->>>>>>> 044f5427a697dfcedede637dcc2111efcbbd1152
+
 });
 
 
