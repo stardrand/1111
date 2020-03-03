@@ -51,3 +51,13 @@ Route::post('update/{bid}','BrandController@update');
 });
 
 
+Route::prefix('user')->group(function(){
+    Route::get('create','UserController@create');
+    Route::post('add','UserController@add');    //添加aiax验证
+    Route::post('store','UserController@store');
+    Route::get('/','UserController@index');
+    Route::get('edit/{id}','UserController@edit');
+    Route::post('update/{id}','UserController@update');
+    Route::get('destroy/{id}','UserController@destroy'); 
+    });
+
